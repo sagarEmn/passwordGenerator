@@ -43,3 +43,12 @@
     color: #0F1035;
 }
 
+:root {
+  --base-font-size: 30px;
+}
+
+@media only screen and (min-width: 500px) {
+  * {
+    font-size: calc(var(--base-font-size) * 0.9);
+  }
+}
