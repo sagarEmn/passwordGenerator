@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
-import './index.css';
+import "./index.css";
 
 function App() {
   const [length, setLength] = useState(8); // password length
@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-      <div className="w-full max-w-fit shadow-md rounded-lg p-7 mx-auto my-20 text-red-600 font-medium bg-gray-700 flex-wrap">
+      <div className="w-full max-w-fit shadow-md rounded-lg p-7 my-20 mx-8 text-red-600 font-medium bg-gray-700 flex-wrap">
         <h1 className="text-white text-center text-2xl py-0.5">
           Password Generator
         </h1>
