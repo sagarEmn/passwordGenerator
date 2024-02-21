@@ -31,6 +31,13 @@ function App() {
   }, [length, numberAllowed, charAllowed]);
   // runs passwordGenerator() once, doesn't run again unless dependencies change
 
+  const passwordRef = useRef(null);
+  //refers to the value of input value
+  const copyPasswordToClipboard = useCallback(() => {
+    passwordRef.current?.select();
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
+
   return (
     <>
       <div className="w-full max-w-fit mx-auto shadow-md rounded-lg px-3 py-3 my-20 text-orange-500 bg-gray-700">
@@ -38,40 +45,62 @@ function App() {
 
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
           <input
+            ref={passwordRef}
             type="text"
             value={password}
             className="outline-none w-full py-1 px-3"
-            placeHolder="eminem"
+            placeHolder="Password"
             readOnly
           />
-          
-          {/* Div for length range button */}
-          <div className="flex text-sm gap-x-2">
-            <div className="flex items-center gap-x-1">
-              <input
-                type="range"
-                min={6}
-                max={20}
-                value={length}
-                className="cursor-pointer"
-                onChange={(fireEvent) => {
-                  setLength(fireEvent.target.value);
-                }}
-              />
-              <label>Length: {Length}</label>
-            </div>
 
-            <div className="flex items-center gap-x-1">
-              <input 
+          {/* Copy button */}
+          <button
+            onClick={copyPasswordToClipboard}
+            className="outline-none bg-blue-500 text-white px-3 py-0.5 shrink-0"
+          >
+            Copy
+          </button>
+        </div>
+        {/* Div for length range button */}
+        <div className="flex text-sm gap-x-2">
+          <div className="flex items-center gap-x-1">
+            <input
+              type="range"
+              min={6}
+              max={20}
+              value={length}
+              className="cursor-pointer"
+              onChange={(fireEvent) => {
+                setLength(fireEvent.target.value);
+              }}
+            />
+            <label>Length: {length}</label>
+          </div>
+
+          {/* Numbers */}
+          <div className="flex items-center gap-x-1">
+            <input
               type="checkbox"
               defaultChecked={numberAllowed}
               id="numberInput"
               onChange={() => {
                 setNumberAllowed((prev) => !prev);
               }}
-              />
-              <label>Special Characters </label>
-            </div>
+            />
+            <label>Number </label>
+          </div>
+
+          {/* Special characters */}
+          <div className="flex items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={charAllowed}
+              id="numberInput"
+              onChange={() => {
+                setCharAllowed((prev) => !prev);
+              }}
+            />
+            <label>Characters </label>
           </div>
         </div>
       </div>
