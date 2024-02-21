@@ -40,8 +40,8 @@ function App() {
 
   return (
     <>
-      <div className="w-full max-w-fit mx-auto shadow-md rounded-lg px-3 py-3 my-20 text-orange-500 bg-gray-700">
-        <h1 className="text-white text-center py-0.5">Password Generator</h1>
+      <div className="w-full max-w-fit mx-auto shadow-md rounded-lg px-3 py-3 my-20 text-red-600 font-medium bg-gray-700">
+        <h1 className="text-white text-center text-2xl py-0.5">Password Generator</h1>
 
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
           <input
@@ -62,7 +62,7 @@ function App() {
           </button>
         </div>
         {/* Div for length range button */}
-        <div className="flex text-sm gap-x-2">
+        <div className="text-2xl flex gap-x-4">
           <div className="flex items-center gap-x-1">
             <input
               type="range"
