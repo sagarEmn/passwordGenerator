@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 500px) {
   /* Styles for screens smaller than 768px wide */
   .h-7 {
     font-size: 14px; /* Adjust as needed */
@@ -16,4 +16,32 @@
   .h-7.w-7 {
     height: 1.2rem /* 28px */;
   }
+  .rowFlow {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+  }
+  .columnFlow {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .mx-auto {
+    margin-left: 2rem; /* Adjust as needed */
+    margin-right: 2rem; /* Adjust as needed */
+  }
+}
+.colorOnBox {
+  /* background-color: rgba(127, 199, 217, 2); */
+  border-radius: 50px;
+  background: #7fc7d9;
+  box-shadow: 31px 31px 62px #6197a5, -31px -31px 62px #9df7ff;
+}
+
+.fontColor {
+    color: #0F1035;
 }

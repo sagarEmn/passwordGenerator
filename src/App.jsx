@@ -41,8 +41,9 @@ function App() {
 
   return (
     <>
-      <div className="w-full max-w-fit shadow-md rounded-lg p-7 my-20 mx-8 text-red-600 font-medium bg-gray-700 flex-wrap">
-        <h1 className="text-white text-center text-2xl py-0.5">
+      {/* colorOnBox */}
+      <div className="w-full max-w-fit shadow-md rounded-lg p-7 my-20 mx-auto font-medium flex-wrap colorOnBox fontColor">
+        <h1 className="fontColor text-center text-2xl py-0.5">
           Password Generator
         </h1>
 
@@ -54,6 +55,7 @@ function App() {
             className="outline-none w-full py-1 px-3 text-3xl"
             placeholder="Password"
             readOnly
+            style={{ backgroundColor: "#DCF2F1" }}
           />
 
           {/* Copy button */}
@@ -65,8 +67,8 @@ function App() {
           </button>
         </div>
         {/* Div for length range button */}
-        <div className="text-2xl flex-wrap gap-x-4">
-          <div className="flex items-center gap-x-1">
+        <div className="text-2xl flex-wrap gap-x-4 columnFlow">
+          <div className="flex items-center gap-x-1 flex-wrap columnFlow">
             <input
               type="range"
               min={6}
@@ -81,7 +83,7 @@ function App() {
           </div>
 
           {/* Numbers */}
-          <div className="flex items-center gap-x-1">
+          <div className="flex items-center gap-x-1 rowFlow">
             <input
               className="h-7 w-7"
               type="checkbox"
@@ -95,7 +97,7 @@ function App() {
           </div>
 
           {/* Special characters */}
-          <div className="flex items-center gap-x-1">
+          <div className="flex items-center gap-x-1 rowFlow">
             <input
               className="h-7 w-7"
               type="checkbox"
