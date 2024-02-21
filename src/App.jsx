@@ -1,8 +1,8 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 
 function App() {
-  const [length, setLength] = useState(8); // password length 
-  const [numberAllowed, setNumberAllowed] = useState(false); 
+  const [length, setLength] = useState(8); // password length
+  const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState();
 
@@ -21,7 +21,7 @@ function App() {
       pass += str.charAt(index);
     }
     setPassword(pass);
-  }, [length, numberAllowed, charAllowed, setPassword])
+  }, [length, numberAllowed, charAllowed, setPassword]);
   //memoizes function and returns the same functin reference unless dependencies change
 
   //calling passwordGenerator() is a change, even though it's dependencies aren't changed, leading to re-rendering
@@ -33,9 +33,50 @@ function App() {
 
   return (
     <>
-      
+      <div className="w-full max-w-fit mx-auto shadow-md rounded-lg px-3 py-3 my-20 text-orange-500 bg-gray-700">
+        <h1 className="text-white text-center py-0.5">Password Generator</h1>
+
+        <div className="flex shadow rounded-lg overflow-hidden mb-4">
+          <input
+            type="text"
+            value={password}
+            className="outline-none w-full py-1 px-3"
+            placeHolder="eminem"
+            readOnly
+          />
+          
+          {/* Div for length range button */}
+          <div className="flex text-sm gap-x-2">
+            <div className="flex items-center gap-x-1">
+              <input
+                type="range"
+                min={6}
+                max={20}
+                value={length}
+                className="cursor-pointer"
+                onChange={(fireEvent) => {
+                  setLength(fireEvent.target.value);
+                }}
+              />
+              <label>Length: {Length}</label>
+            </div>
+
+            <div className="flex items-center gap-x-1">
+              <input 
+              type="checkbox"
+              defaultChecked={numberAllowed}
+              id="numberInput"
+              onChange={() => {
+                setNumberAllowed((prev) => !prev);
+              }}
+              />
+              <label>Special Characters </label>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
-  )
-
-
+  );
 }
+
+export default App;
