@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from "react";
+import './index.css';
 
 function App() {
   const [length, setLength] = useState(8); // password length
@@ -40,15 +41,17 @@ function App() {
 
   return (
     <>
-      <div className="w-full max-w-fit mx-auto shadow-md rounded-lg px-3 py-3 my-20 text-red-600 font-medium bg-gray-700">
-        <h1 className="text-white text-center text-2xl py-0.5">Password Generator</h1>
+      <div className="w-full max-w-fit shadow-md rounded-lg p-7 mx-auto my-20 text-red-600 font-medium bg-gray-700">
+        <h1 className="text-white text-center text-2xl py-0.5">
+          Password Generator
+        </h1>
 
         <div className="flex shadow rounded-lg overflow-hidden mb-4">
           <input
             ref={passwordRef}
             type="text"
             value={password}
-            className="outline-none w-full py-1 px-3"
+            className="outline-none w-full py-1 px-3 text-3xl"
             placeholder="Password"
             readOnly
           />
@@ -56,7 +59,7 @@ function App() {
           {/* Copy button */}
           <button
             onClick={copyPasswordToClipboard}
-            className="outline-none bg-blue-500 text-white px-3 py-0.5 shrink-0"
+            className="outline-none bg-blue-500 text-white px-3 py-0.5 shrink-0 text-2xl"
           >
             Copy
           </button>
@@ -80,6 +83,7 @@ function App() {
           {/* Numbers */}
           <div className="flex items-center gap-x-1">
             <input
+              className="h-7 w-7"
               type="checkbox"
               defaultChecked={numberAllowed}
               id="numberInput"
@@ -93,6 +97,7 @@ function App() {
           {/* Special characters */}
           <div className="flex items-center gap-x-1">
             <input
+              className="h-7 w-7"
               type="checkbox"
               defaultChecked={charAllowed}
               id="numberInput"
