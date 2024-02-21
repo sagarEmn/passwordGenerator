@@ -2,4 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-  
+@media only screen and (max-width: 768px) {
+  /* Styles for screens smaller than 768px wide */
+  .h-7 {
+    font-size: 14px; /* Adjust as needed */
+  }
+  .text-2xl {
+    font-size: 18px; /* Adjust as needed */
+  }
+  .text-3xl {
+    font-size: 20px; /* Adjust as needed */
+  }
+  .h-7.w-7 {
+    height: 1.2rem /* 28px */;
+  }
+}

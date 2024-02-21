@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-      <div className="w-full max-w-fit shadow-md rounded-lg p-7 mx-auto my-20 text-red-600 font-medium bg-gray-700">
+      <div className="w-full max-w-fit shadow-md rounded-lg p-7 mx-auto my-20 text-red-600 font-medium bg-gray-700 flex-wrap">
         <h1 className="text-white text-center text-2xl py-0.5">
           Password Generator
         </h1>
@@ -65,7 +65,7 @@ function App() {
           </button>
         </div>
         {/* Div for length range button */}
-        <div className="text-2xl flex gap-x-4">
+        <div className="text-2xl flex-wrap gap-x-4">
           <div className="flex items-center gap-x-1">
             <input
               type="range"
