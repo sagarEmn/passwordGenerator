@@ -49,7 +49,7 @@ function App() {
             type="text"
             value={password}
             className="outline-none w-full py-1 px-3"
-            placeHolder="Password"
+            placeholder="Password"
             readOnly
           />
 
