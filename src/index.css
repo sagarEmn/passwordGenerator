@@ -27,21 +27,19 @@
     justify-content: center;
     align-items: center;
   }
-}
-
-@media only screen and (max-width: 400px) {
   .mx-auto {
-    margin-left: 2rem; /* Adjust as needed */
-    margin-right: 2rem; /* Adjust as needed */
+    margin-left: 2rem; 
+    margin-right: 2rem; 
   }
 }
+
 .colorOnBox {
   /* background-color: rgba(127, 199, 217, 2); */
   border-radius: 50px;
   background: #7fc7d9;
   box-shadow: 31px 31px 62px #6197a5, -31px -31px 62px #9df7ff;
 }
-
 .fontColor {
     color: #0F1035;
 }
+
