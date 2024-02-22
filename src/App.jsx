@@ -68,17 +68,18 @@ function App() {
         </div>
         {/* Div for length range button */}
         <div className="text-2xl flex-wrap gap-x-4 columnFlow">
-          <div className="flex items-center gap-x-1 flex-wrap columnFlow">
+          <div className="flex items-center gap-x-1 flex-wrap flex-col columnFlow">
             <input
               type="range"
               min={6}
               max={20}
               value={length}
-              className="cursor-pointer"
+              className="cursor-pointer w-full h-8"
               onChange={(fireEvent) => {
                 setLength(fireEvent.target.value);
               }}
             />
+
             <label>Length: {length}</label>
           </div>
 
